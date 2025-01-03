@@ -29,6 +29,7 @@ jobs:
         run: |
           R -e 'if (!requireNamespace("data.table", quietly = TRUE)) install.packages("data.table")'
 
-      - name: Run R scripts
+      - name: Set working directory and run R scripts
         run: |
+          R -e 'setwd(getwd())'
           R -e 'files <- list.files("R", pattern = "\\.R$", full.names = TRUE); lapply(files, source)'
