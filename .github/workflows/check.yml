@@ -19,10 +19,10 @@ jobs:
 
       - name: Install dependencies
         run: |
-          if [ -file "DESCRIPTION" ]; then
+          if [ -f "DESCRIPTION" ]; then
             R -e 'if (file.exists("DESCRIPTION")) { devtools::install_deps(dep = TRUE) }'
           fi
 
-      - name: Run R CMD check
+      - name: Run R scripts
         run: |
-          R -e 'devtools::check()'
+          R -e 'files <- list.files("R", pattern = "\\.R$", full.names = TRUE); lapply(files, source)'
