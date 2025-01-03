@@ -1,0 +1,15 @@
+Package: RCodingExamples
+Type: Package
+Title: An R Coding Examples for Data Analysis
+Version: 0.1.0
+Author: Juan Diego Bonilla
+Maintainer: Your Name <jdiegobonp@gmail.com>
+Description: It is a package that contains a set of R coding examples for data analysis. The examples are based on the book "R for Data Science" by Hadley Wickham and Garrett Grolemund. The examples are organized by chapters and are intended to be used as a reference for data analysis tasks.
+License: MIT
+Imports:
+    dplyr (>= 1.0.0),
+    ggplot2,
+    tidyr
+Suggests:
+    testthat,
+    knitr
