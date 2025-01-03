@@ -1,0 +1,8 @@
+# Exportar el update_standings() y cualquier otra función que desees
+export(update_standings)
+
+# Importar el paquete necesario
+import(data.table)
+
+# Si hay funciones específicas de otro paquete que estás utilizando, importarlas así:
+importFrom(data.table, fread, :=, .SD, lapply, setorderv)
