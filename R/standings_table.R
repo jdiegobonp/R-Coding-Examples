@@ -2,7 +2,7 @@
 library(data.table)
 
 # Dataset taken from https://footballcsv.github.io/
-dt = fread("./datasets/eng.1.csv")
+dt = fread("../data/eng.1.csv")
 print(dt)
 names(dt)
 head(dt)
