@@ -25,6 +25,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-R-
 
+      - name: Install data.table package
+        run: |
+          R -e 'if (!requireNamespace("data.table", quietly = TRUE)) install.packages("data.table")'
+
       - name: Run R scripts
         run: |
           R -e 'files <- list.files("R", pattern = "\\.R$", full.names = TRUE); lapply(files, source)'
