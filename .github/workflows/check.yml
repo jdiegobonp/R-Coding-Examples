@@ -25,15 +25,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-R-
 
-      - name: Install dependencies
-        run: |
-          # Install devtools if it's not already installed
-          R -e 'if (!requireNamespace("devtools", quietly = TRUE)) install.packages("devtools")'
-          # Use devtools to install dependencies from DESCRIPTION file
-          if [ -f "DESCRIPTION" ]; then
-            R -e 'if (file.exists("DESCRIPTION")) { devtools::install_deps(dep = TRUE) }'
-          fi
-
       - name: Run R scripts
         run: |
           R -e 'files <- list.files("R", pattern = "\\.R$", full.names = TRUE); lapply(files, source)'
