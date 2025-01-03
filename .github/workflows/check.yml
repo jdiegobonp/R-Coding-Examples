@@ -19,6 +19,7 @@ jobs:
 
       - name: Install dependencies
         run: |
+          R -e 'install.packages("devtools")'  # Instalar devtools
           if [ -f "DESCRIPTION" ]; then
             R -e 'if (file.exists("DESCRIPTION")) { devtools::install_deps(dep = TRUE) }'
           fi
