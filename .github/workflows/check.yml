@@ -31,5 +31,7 @@ jobs:
 
       - name: Set working directory and run R scripts
         run: |
+          ls
+          getwd()
           R -e 'setwd(getwd())'
           R -e 'files <- list.files("R", pattern = "\\.R$", full.names = TRUE); lapply(files, source)'
